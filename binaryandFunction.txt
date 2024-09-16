@@ -1,0 +1,112 @@
+chapter-5
+1) calculate sum of digits of a number.
+
+int sumOfDigits(int num){
+int digSum = 0;
+
+  while(num > 0){
+    int lastDig = num % 10;
+    num = num/10;
+
+    digSum = digSum + lastDig;
+  }
+  return digSum;
+}
+
+int main(){
+cout << "sun = " << sumOfDigits(145) << endl;
+
+    return 0;
+}
+
+2) calculate nCr binomial coefficient for n & r
+
+sol=>
+
+int factorial(int n){
+  int fact = 1;
+
+  for (int i = 1; i <= n; i++){
+    fact *= i;
+  }
+  return fact;
+}
+
+int nCr(int n, int r){
+  int fact_n = factorial(n);
+  int fact_r = factorial(r);
+  int fact_nmr = factorial(n-r);
+
+  return fact_n/(fact_r * fact_nmr);
+}
+
+int main(){
+
+  int n = 8, r = 2;
+  cout << nCr(n, r) << endl;
+    return 0;
+}
+
+HOMEWORK
+1) WAF to check if a number is prime or not.
+2) WAF to prime all prime numbers from 2 to N.
+3) WAF to print nth Fibonacci.
+4) switch function programme .
+
+
+chapter : 6
+
+Binary Number System
+
+1010001 - binary
+123234 - decimal
+
+Decimal to Binary
+42 = > repeated division with 2 and write back word wise
+
+(42)10 = (101010)2
+
+1) code sol=> decimal to binary of 50
+
+int decToBinary(int decNum){
+  int ans = 0, pow = 1;
+
+  while(decNum > 0){
+    int rem = decNum % 2;
+    decNum /= 2;
+
+    ans += (rem * pow);
+    pow *= 10;
+  }
+  return ans; 
+}
+
+int main(){
+  int decNum = 50;
+  cout << "binary: " << decToBinary(decNum) << endl; 
+
+  return 0;
+}
+
+
+2) Binary to decimal 
+
+int binToDecimal(int binNum){
+int ans = 0, pow = 1;
+
+while(binNum > 0){
+  int rem = binNum % 2;
+   ans += rem * pow;
+
+   binNum /= 10;
+   pow *= 2;
+}
+return ans;
+}
+
+int main(){
+  cout << binToDecimal(1010) << endl;
+  return 0;
+}
+
+

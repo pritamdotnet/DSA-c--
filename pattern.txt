@@ -1,0 +1,290 @@
+source code => compiler (g++) file name => code.exe 
+run the c++ => g++ dsa.cpp -o dsa.exe && .\dsa.exe
+
+square pattern
+
+n = 4
+
+exp:- 
+outer loop 1 to n (n times)
+inner loop => row ( 1 single row what will print -> inner loop ) 
+
+for(int i=1; i<=n; i++){
+  
+  for(int j=1; j<=n; j++){
+
+	cout << j;
+ }
+cout << endl;
+}
+sol=>
+1234
+1234
+1234
+1234
+
+2) ABCD   N=4
+
+    int n = 4;
+    
+    for (int i = 1; i <= n; i++){
+        char ch = 'A';
+      for (int j = 1; j <= n; j++){
+        cout << ch;
+        ch = ch + 1; 
+      }
+      cout << endl;
+    }
+    return 0;
+
+sol:=>
+
+ABCD
+ABCD
+ABCD
+ABCD
+
+3)  n = 3
+
+	123
+	456
+	789
+
+int num = 1;
+for(int i=0; i<n; i++){
+for(int j=0; j<n; j++){
+   cout << num;
+	num++;
+ }
+	cout << endl;
+}
+
+4) n = 3 || 'A' = homework
+
+Triangle pattern
+4) n = 4 
+
+5) n = 4
+
+	*
+	**
+	***
+	****
+
+
+sol=>
+	int n = 4;
+
+for (int i = 0; i < n; i++)
+{
+    for (int j = 0; j < i+1; j++)
+    {
+        cout << "* ";
+    }cout << endl;
+    
+}
+
+6) n = 4
+	1
+	22
+	333
+	4444
+
+sol=>
+	int n = 4;
+
+for(i=0; i<n; i++){
+ for(j=0; j<i+1; j++){
+   cout << i+1;
+}
+cout << endl;
+}
+
+7) n = 5; HOMEWORK
+
+	A
+	BB
+	CCC
+	DDDD
+	EEEEE
+
+8) N = 4;
+
+	1
+	12
+	123
+	1234
+sol=>
+
+int n = 4;
+
+for (int i = 0; i < n; i++){
+    for (int j = 1; j <= i+1; j++){
+        cout << j ;
+    }
+    cout << endl;
+}
+
+9) n = 4  back word loop   (reverse loop) 
+
+	1
+	21
+	321
+	4321
+sol=>
+	int n = 4;
+
+for (int i = 0; i < n; i++)
+{
+    for (int j = i+1; j > 0; j--)
+    {
+       cout << j;
+    }
+    cout << endl;
+}
+
+Floyd's Triangle pattern
+
+10) n = 4;
+	1
+	23
+	456
+	78910
+
+sol=>
+
+int n = 4;
+int num = 1;
+
+for (int i = 0; i < n; i++)
+{
+    for(int j=0; j<i+1; j++){
+        cout << num;
+        num++;
+    }
+    cout << endl;
+}
+
+11)  n = 4  HOMEWORK
+	A
+	BC
+	DEF
+	GHIJ
+
+Inverted Triangle pattern
+12) N = 4
+	1111
+	 222
+	  33
+	   4
+SOL=>
+int n = 4;
+for (int i = 0; i < n; i++){
+   for (int j = 0; j < i+1; j++){
+    cout << " ";
+   }
+   for (int j = 0; j <n-i ; j++){
+    cout << i+1;
+   }
+   cout << endl; 
+}
+
+13) n =4 HOMEWORK
+
+	AAAA
+	 BBB
+	  CC
+	   D
+Pyramid pattern
+
+13 N = 14;
+	
+   1
+  121
+ 12321
+1234321
+
+sol=> 
+int n = 4;
+
+for (int i = 0; i < n; i++){
+   // spaces
+   for (int j = 0; j < n-i-1; j++){
+    cout << " ";
+   }
+   // nums1
+   for (int j = 1; j <=i+1; j++){
+    cout << j;
+   }
+   // nums2
+   for (int j = i; j > 0; j--) // backword loop
+   {
+    cout << j;
+   }
+   cout << endl;
+}
+
+Hollow Diamond Pattenr
+12) n = 4;
+
+   *
+  *  *
+ *    *
+*      *
+ *    *
+  *  *
+   *
+
+sol=> 
+
+    int n = 4;
+
+    for (int i = 0; i < n; i++)
+    {
+        // spaces n-i-1
+        for(int j=0; j < n-i-1; j++){
+           cout << " ";
+        }
+        cout << "*";
+        if (i != 0){
+        // spaces
+        for (int j = 0; j < 2*i-1; j++){
+            cout << " ";   
+        }
+        cout << "*";
+        }
+        cout << endl;
+    }
+    for (int i = 0; i < n-1; i++){
+       // spaces
+       for (int j = 0; j < i+1; j++){
+        cout << " ";
+       } 
+       cout << "*";
+
+       if(i != n-2){
+         // spaces
+         for (int j = 0; j < 2*(n-i)-5; j++)
+         {
+            cout << " ";   
+         }
+         cout << "*";
+       }
+
+      cout << endl;
+
+    }
+   
+13) Butterfly pattern Homework
+
+
+
+	
+
+	
+	
+
+
+
+
+
