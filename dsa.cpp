@@ -3,53 +3,36 @@
 #include <climits> 
 using namespace std;
 
-
-bool isPossible(vector<int> &arr, int n, int m, int maxAllowedTime){
-    int painters = 1, time = 0;
-
-    for(int i=0; i<n; i++){
-      if(time + arr[i] <= maxAllowedTime){
-          time += arr[i];
-      } else {
-        painters++;
-        time = arr[i];
+void bubbleSort(int arr[], int n){
+  for(int i=0; i<n-i-1; i++) {
+    bool isSwap = false;
+    for(int j=0; j<n-i-1; j++){
+      if(arr[j] > arr[j+1]) {
+        swap(arr[j], arr[j+1]);
+        isSwap = true;
       }
     }
 
-    return painters <= m ;
-
-}
-
-int minTimeToPaint(vector<int> &arr, int n, int m ){
-  int sum = 0, maxVal = INT_MIN;
-  for(int i=0; i<n; i++){
-      sum += arr[i];
-      maxVal = max(maxVal, arr[i]);
- }
-
-  int st = maxVal, end = sum, ans = -1;
-
-  while(st <= end) {
-    int mid = st + (end-st)/2;
-
-    if(isPossible(arr, n, m, mid)) { // left
-      ans = mid;
-      end = mid - 1;
-    } else { // right
-      st = mid + 1;
-    }
+      if(!isSwap) { // array is already sorted
+        return;
+      }
   }
-
-  return ans;
-
-
-
 }
+
+void printArray(int arr[], int n){
+  for(int i=0; i<n; i++) {
+    cout << arr[i] << " ";
+  }
+  cout << endl;
+}
+
 
 int main(){
-  vector<int> arr = {40, 30, 10, 20};
- int n = 4,  m = 2;
+  int n = 5;
+  int arr[] = {4, 1, 5, 2, 3};
 
-  cout << minTimeToPaint(arr, n, m)  << endl;
+  bubbleSort(arr, n);
+  printArray(arr,n);
+
   return 0;
 }
